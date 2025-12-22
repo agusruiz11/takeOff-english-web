@@ -1,0 +1,102 @@
+import React from 'react';
+import { Facebook, Instagram, Linkedin, Mail } from 'lucide-react';
+
+const Footer = () => {
+  const scrollToSection = (id) => {
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
+  return (
+    <footer className="bg-[#00264A] text-white py-12">
+      <div className="container mx-auto px-4">
+        <div className="grid md:grid-cols-4 gap-8 mb-8">
+          <div>
+            <img 
+              src="https://horizons-cdn.hostinger.com/21735f29-05b0-4156-bf8f-f988a9371114/fee223c4526b18e76ea3e58fef436bff.webp" 
+              alt="Take Off English logo" 
+              className="h-36 w-36 ml-8" 
+            />
+            <p className="text-gray-300 text-sm">
+              Inglés práctico para objetivos reales: trabajo, viajes y exámenes
+            </p>
+          </div>
+
+          <div>
+            <span className="font-semibold text-lg mb-4 block">Navegación</span>
+            <nav className="flex flex-col space-y-2">
+              <button
+                onClick={() => scrollToSection('hero')}
+                className="text-gray-300 hover:text-[#FF8C00] transition-colors duration-200 text-left text-sm"
+              >
+                Inicio
+              </button>
+              <button
+                onClick={() => scrollToSection('programs')}
+                className="text-gray-300 hover:text-[#FF8C00] transition-colors duration-200 text-left text-sm"
+              >
+                Programas
+              </button>
+              <button
+                onClick={() => scrollToSection('about')}
+                className="text-gray-300 hover:text-[#FF8C00] transition-colors duration-200 text-left text-sm"
+              >
+                Sobre mí
+              </button>
+              <button
+                onClick={() => scrollToSection('faq')}
+                className="text-gray-300 hover:text-[#FF8C00] transition-colors duration-200 text-left text-sm"
+              >
+                FAQs
+              </button>
+            </nav>
+          </div>
+
+          <div>
+            <span className="font-semibold text-lg mb-4 block">Programas</span>
+            <div className="flex flex-col space-y-2">
+              <p className="text-gray-300 text-sm">Inglés para viajes</p>
+              <p className="text-gray-300 text-sm">Inglés para el trabajo</p>
+              <p className="text-gray-300 text-sm">Inglés práctico</p>
+              <p className="text-gray-300 text-sm">Preparación PET/FCE</p>
+            </div>
+          </div>
+
+          <div>
+            <span className="font-semibold text-lg mb-4 block">Síguenos</span>
+            <div className="flex space-x-4 mb-4">
+              <button className="text-gray-300 hover:text-[#FF8C00] transition-colors duration-200">
+                <Facebook size={24} />
+              </button>
+              <button className="text-gray-300 hover:text-[#FF8C00] transition-colors duration-200">
+                <Instagram size={24} />
+              </button>
+              <button className="text-gray-300 hover:text-[#FF8C00] transition-colors duration-200">
+                <Linkedin size={24} />
+              </button>
+              <button className="text-gray-300 hover:text-[#FF8C00] transition-colors duration-200">
+                <Mail size={24} />
+              </button>
+            </div>
+            <a
+              href="#"
+              className="text-gray-400 hover:text-[#FF8C00] transition-colors duration-200 text-sm"
+            >
+              Campus (próximamente)
+            </a>
+          </div>
+        </div>
+
+        <div className="border-t border-gray-700 pt-8 text-center">
+          <p className="text-gray-400 text-sm">
+            © {new Date().getFullYear()} Take Off English. Todos los derechos reservados.
+          </p>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;
