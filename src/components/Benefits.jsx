@@ -1,36 +1,8 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Clock, Calendar, Target, MessageSquare, Sparkles } from 'lucide-react';
+import { valueProps } from '@/content/valueProps';
 
 const Benefits = () => {
-  const benefits = [
-    {
-      icon: Clock,
-      title: 'Clases cortas y prácticas',
-      description: 'Sesiones de 45-60 minutos enfocadas en resultados reales'
-    },
-    {
-      icon: Calendar,
-      title: 'Flexibilidad de horarios',
-      description: 'Adapta las clases a tu agenda y disponibilidad'
-    },
-    {
-      icon: Target,
-      title: 'Enfoque por objetivo',
-      description: 'Trabajo, viajes o exámenes - tú decides tu meta'
-    },
-    {
-      icon: MessageSquare,
-      title: 'Inglés usable y real',
-      description: 'Conversaciones y situaciones del mundo real'
-    },
-    {
-      icon: Sparkles,
-      title: 'Confianza para hablar',
-      description: 'Desarrolla seguridad desde la primera clase'
-    }
-  ];
-
   return (
     <section className="py-20 bg-white">
       <div className="container mx-auto px-4">
@@ -50,7 +22,7 @@ const Benefits = () => {
         </motion.div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-5 gap-8">
-          {benefits.map((benefit, index) => {
+          {valueProps.map((benefit, index) => {
             const Icon = benefit.icon;
             return (
               <motion.div
@@ -64,7 +36,7 @@ const Benefits = () => {
                 <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-[#FF8C00]/10 text-[#FF8C00] mb-4 group-hover:bg-[#FF8C00] group-hover:text-white transition-all duration-300">
                   <Icon size={32} />
                 </div>
-                <h3 className="text-lg font-normal text-[#00264A] mb-2">
+                <h3 className="text-lg font-semibold text-[#00264A] mb-2">
                   {benefit.title}
                 </h3>
                 <p className="text-gray-600 font-light text-sm">

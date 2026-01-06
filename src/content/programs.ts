@@ -1,0 +1,184 @@
+export interface PlanFeature {
+  text: string;
+}
+
+export interface Plan {
+  name: string;
+  asyncCount: number;
+  syncCount: number;
+  syncDuration?: string; // "1 hora reloj" si aplica
+  features: PlanFeature[];
+  notes?: string[];
+}
+
+export interface Program {
+  id: string;
+  title: string;
+  duration: string;
+  plans: Plan[];
+  specialNote?: string; // Para PET/FCE sobre inscripción
+  image?: string;
+}
+
+export const programs: Program[] = [
+  {
+    id: 'trabajo',
+    title: 'Inglés para el trabajo',
+    duration: '2 meses',
+    plans: [
+      {
+        name: 'Ready to fly',
+        asyncCount: 10,
+        syncCount: 6,
+        features: [
+          { text: 'Clases 1:1 personalizadas' },
+          { text: 'Plan personalizado' },
+          { text: 'Acceso al campus' },
+          { text: 'Contenido asincrónico (videos, PDFs, ejercicios)' },
+          { text: 'Vocabulario clave' },
+          { text: 'Grabaciones de clases' },
+          { text: 'Acompañamiento básico y seguimiento' }
+        ]
+      },
+      {
+        name: 'Full take off',
+        asyncCount: 16,
+        syncCount: 8,
+        syncDuration: '1 hora reloj',
+        features: [
+          { text: 'Clases 1:1 personalizadas' },
+          { text: 'Plan personalizado por objetivos' },
+          { text: 'Plataforma con material completo' },
+          { text: 'Práctica de speaking en cada clase' },
+          { text: 'Correcciones y feedback' },
+          { text: 'Grabaciones de clases' },
+          { text: 'Evaluación inicial + seguimiento continuo' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'viajes',
+    title: 'Inglés para viajes',
+    duration: '2 meses',
+    plans: [
+      {
+        name: 'Ready to fly',
+        asyncCount: 10,
+        syncCount: 6,
+        features: [
+          { text: 'Clases 1:1 personalizadas' },
+          { text: 'Plan personalizado' },
+          { text: 'Acceso al campus' },
+          { text: 'Contenido asincrónico (videos, PDFs, ejercicios)' },
+          { text: 'Vocabulario clave' },
+          { text: 'Grabaciones de clases' },
+          { text: 'Acompañamiento básico y seguimiento' }
+        ]
+      },
+      {
+        name: 'Full take off',
+        asyncCount: 16,
+        syncCount: 8,
+        syncDuration: '1 hora reloj',
+        features: [
+          { text: 'Clases 1:1 personalizadas' },
+          { text: 'Plan personalizado por objetivos' },
+          { text: 'Plataforma con material completo' },
+          { text: 'Práctica de speaking en cada clase' },
+          { text: 'Correcciones y feedback' },
+          { text: 'Grabaciones de clases' },
+          { text: 'Evaluación inicial + seguimiento continuo' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'no-puedo',
+    title: 'Inglés para los que piensan "que no pueden"',
+    duration: '6 meses',
+    plans: [
+      {
+        name: 'Ready to fly',
+        asyncCount: 30,
+        syncCount: 18,
+        syncDuration: '1 hora reloj',
+        features: [
+          { text: 'Clases 1:1 personalizadas' },
+          { text: 'Plan personalizado' },
+          { text: 'Acceso al campus' },
+          { text: 'Contenido asincrónico (videos, PDFs, ejercicios)' },
+          { text: 'Vocabulario clave' },
+          { text: 'Grabaciones de clases' },
+          { text: 'Acompañamiento básico y seguimiento' }
+        ]
+      },
+      {
+        name: 'Full take off',
+        asyncCount: 48,
+        syncCount: 24,
+        syncDuration: '1 hora reloj',
+        features: [
+          { text: 'Clases 1:1 personalizadas' },
+          { text: 'Plan personalizado por objetivos' },
+          { text: 'Plataforma con material completo' },
+          { text: 'Práctica de speaking en cada clase' },
+          { text: 'Correcciones y feedback' },
+          { text: 'Grabaciones de clases' },
+          { text: 'Evaluación inicial + seguimiento continuo' }
+        ]
+      }
+    ]
+  },
+  {
+    id: 'pet-fce',
+    title: 'Exámenes PET & FCE Cambridge',
+    duration: '6 meses',
+    specialNote: 'No incluye valor de inscripción a exámenes. Consultar por gestión de inscripción.',
+    plans: [
+      {
+        name: 'Ready to fly',
+        asyncCount: 30,
+        syncCount: 18,
+        syncDuration: '1 hora reloj',
+        features: [
+          { text: 'Clases 1:1 personalizadas' },
+          { text: 'Plan personalizado' },
+          { text: 'Acceso al campus' },
+          { text: 'Contenido asincrónico (videos, PDFs, ejercicios)' },
+          { text: 'Vocabulario clave' },
+          { text: 'Grabaciones de clases' },
+          { text: 'Acompañamiento básico y seguimiento' },
+          { text: 'Mock exams' },
+          { text: 'Corrección y retroalimentación de writing (ensayos/reseñas)' },
+          { text: 'Vocabulario para speaking' }
+        ]
+      },
+      {
+        name: 'Full take off',
+        asyncCount: 48,
+        syncCount: 24,
+        syncDuration: '1 hora reloj',
+        notes: ['TODO: Confirmar si 48 asincrónicas y 24 sincrónicas son totales o por mes'],
+        features: [
+          { text: 'Clases 1:1 personalizadas' },
+          { text: 'Plan personalizado por objetivos' },
+          { text: 'Plataforma con material completo' },
+          { text: 'Práctica de speaking en cada clase' },
+          { text: 'Correcciones y feedback' },
+          { text: 'Grabaciones de clases' },
+          { text: 'Evaluación inicial + seguimiento continuo' },
+          { text: 'Corrección y retroalimentación de writing (ensayos/reseñas)' },
+          { text: 'Speaking y práctica intensiva' }
+        ]
+      }
+    ]
+  }
+];
+
+// Regla general sobre clases
+export const generalRule = {
+  text: 'Todos los planes incluyen clases sincrónicas y asincrónicas.',
+  detail: 'Las clases sincrónicas son personalizadas (profesor + alumno), se graban y se suben al Campus.'
+};
+

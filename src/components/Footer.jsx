@@ -65,7 +65,18 @@ const Footer = () => {
           </div>
 
           <div>
-            <span className="font-semibold text-lg mb-4 block">Síguenos</span>
+            <span className="font-semibold text-lg mb-4 block">Contacto</span>
+            <div className="space-y-3 mb-4">
+              <a
+                href="https://wa.me/5491179951001"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-[#FF8C00] transition-colors duration-200 text-sm block"
+              >
+                +5491179951001
+              </a>
+            </div>
+            <span className="font-semibold text-lg mb-4 block mt-6">Síguenos</span>
             <div className="flex space-x-4 mb-4">
               <button className="text-gray-300 hover:text-[#FF8C00] transition-colors duration-200">
                 <Facebook size={24} />

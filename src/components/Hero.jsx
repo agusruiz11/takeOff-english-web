@@ -1,15 +1,34 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { MessageCircle, Calendar } from 'lucide-react';
+import { siteConfig } from '@/config/site';
+
 const Hero = () => {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const handleWhatsApp = () => {
-    window.open('https://wa.me/[PLACEHOLDER_WHATSAPP_NUMBER]?text=Hola!%20Quiero%20agendar%20mi%20entrevista%20gratis%20para%20Take%20Off%20English%20😊', '_blank');
+    window.open('https://wa.me/5491179951001?text=Hola!%20Quiero%20agendar%20mi%20entrevista%20gratis%20para%20Take%20Off%20English%20😊', '_blank');
   };
   const handleCalendly = () => {
     window.open('[PLACEHOLDER_CALENDLY_URL]', '_blank');
   };
-  return <section id="hero" className="pt-32 pb-20 bg-gradient-to-b from-white to-[#F5F5F5]">
+  
+  // Ajustar padding-top dinámicamente:
+  // - Si hay scroll: solo Header (80px) = pt-32
+  // - Si no hay scroll y promo activo: Header (80px) + PromoBanner (64px) = pt-40
+  // - Si no hay scroll y promo inactivo: solo Header (80px) = pt-32
+  const paddingTop = (siteConfig.promoEnabled && !isScrolled) ? 'pt-40' : 'pt-32';
+  
+  return <section id="hero" className={`${paddingTop} pb-20 bg-gradient-to-b from-white to-[#F5F5F5] transition-all duration-300`}>
       <div className="container mx-auto px-4">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div initial={{

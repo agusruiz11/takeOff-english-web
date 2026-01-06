@@ -17,7 +17,7 @@ const Contact = () => {
   });
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/[PLACEHOLDER_WHATSAPP_NUMBER]?text=Hola!%20Quiero%20agendar%20mi%20entrevista%20gratis%20para%20Take%20Off%20English%20😊', '_blank');
+    window.open('https://wa.me/5491179951001?text=Hola!%20Quiero%20agendar%20mi%20entrevista%20gratis%20para%20Take%20Off%20English%20😊', '_blank');
   };
 
   const handleCalendly = () => {
@@ -63,20 +63,32 @@ const Contact = () => {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto justify-center items-center">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="space-y-8"
+            className="space-y-8 flex flex-col items-center"
           >
-            <div className="bg-white p-8 rounded-2xl shadow-lg space-y-6">
-              <h3 className="text-2xl font-bold text-[#00264A] mb-4">
+            <div className="bg-white p-8 rounded-2xl shadow-lg space-y-6 w-full flex flex-col items-center">
+              <h3 className="text-2xl font-bold text-[#00264A] mb-4 text-center">
                 Agenda tu entrevista ahora
               </h3>
               
-              <div className="space-y-4">
+              <div className="space-y-4 w-full flex flex-col items-center">
+                <div className="text-center pb-2">
+                  <p className="text-gray-600 text-sm mb-1">Teléfono</p>
+                  <a 
+                    href="https://wa.me/5491179951001"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-[#00264A] hover:text-[#FF8C00] font-semibold text-lg transition-colors duration-200"
+                  >
+                    +5491179951001
+                  </a>
+                </div>
+
                 <Button
                   onClick={handleCalendly}
                   className="bg-[#FF8C00] hover:bg-[#E67E00] text-white px-8 py-6 rounded-full text-lg font-semibold w-full shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2"
@@ -94,13 +106,6 @@ const Contact = () => {
                 </Button>
               </div>
             </div>
-
-            <div className="bg-white p-8 rounded-2xl shadow-lg">
-              <img 
-                className="w-full h-auto rounded-xl" 
-                alt="Take off illustration with plane ascending"
-               src="https://images.unsplash.com/photo-1596017878992-6ad23f285a0b" />
-            </div>
           </motion.div>
 
           <motion.div
@@ -109,7 +114,7 @@ const Contact = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="bg-white p-8 rounded-2xl shadow-lg">
+            {/* <div className="bg-white p-8 rounded-2xl shadow-lg">
               <h3 className="text-2xl font-bold text-[#00264A] mb-6">
                 O envíanos un mensaje
               </h3>
@@ -170,6 +175,12 @@ const Contact = () => {
                   Enviar mensaje
                 </Button>
               </form>
+            </div> */}
+            <div className="bg-white p-8 rounded-2xl shadow-lg w-full flex justify-center items-center">
+              <img 
+                className="w-full h-auto rounded-xl" 
+                alt="Take off illustration with plane ascending"
+               src="https://images.unsplash.com/photo-1596017878992-6ad23f285a0b" />
             </div>
           </motion.div>
         </div>
