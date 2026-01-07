@@ -21,7 +21,7 @@ const Contact = () => {
   };
 
   const handleCalendly = () => {
-    window.open('[PLACEHOLDER_CALENDLY_URL]', '_blank');
+    window.open('https://calendly.com/gabyteacher428', '_blank');
   };
 
   const handleSubmit = (e) => {

@@ -1,5 +1,5 @@
 export const siteConfig = {
-  calendlyUrl: '[PLACEHOLDER_CALENDLY_URL]',
+  calendlyUrl: 'https://calendly.com/gabyteacher428',
   whatsappNumber: '5491179951001',
   whatsappMessage: 'Hola! Quiero agendar mi entrevista gratis para Take Off English 😊',
   promoEnabled: true,

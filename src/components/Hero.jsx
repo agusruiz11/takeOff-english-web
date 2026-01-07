@@ -19,7 +19,7 @@ const Hero = () => {
     window.open('https://wa.me/5491179951001?text=Hola!%20Quiero%20agendar%20mi%20entrevista%20gratis%20para%20Take%20Off%20English%20😊', '_blank');
   };
   const handleCalendly = () => {
-    window.open('[PLACEHOLDER_CALENDLY_URL]', '_blank');
+    window.open('https://calendly.com/gabyteacher428', '_blank');
   };
   
   // Ajustar padding-top dinámicamente:
