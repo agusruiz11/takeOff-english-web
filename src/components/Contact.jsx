@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Calendar, MessageCircle, Send } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
+import { siteConfig } from '@/config/site';
 
 const Contact = () => {
   const { toast } = useToast();
@@ -21,7 +22,7 @@ const Contact = () => {
   };
 
   const handleCalendly = () => {
-    window.open('https://calendly.com/gabyteacher428', '_blank');
+    window.open(siteConfig.calendlyUrl, '_blank');
   };
 
   const handleSubmit = (e) => {
