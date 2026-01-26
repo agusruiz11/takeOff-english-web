@@ -16,7 +16,7 @@ const Hero = () => {
   }, []);
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/5491179951001?text=Hola!%20Quiero%20agendar%20mi%20entrevista%20gratis%20para%20Take%20Off%20English%20😊', '_blank');
+    window.open('https://wa.me/5491158143809?text=Hola!%20Quiero%20agendar%20mi%20entrevista%20gratis%20para%20Take%20Off%20English%20😊', '_blank');
   };
   const handleCalendly = () => {
     window.open(siteConfig.calendlyUrl, '_blank');
@@ -52,13 +52,14 @@ const Hero = () => {
               </motion.div>
             </div>
 
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#00264A] leading-tight">
+          <h1 className="text-4xl md:text-3xl lg:text-5xl font-bold text-[#00264A] leading-tight">
             Your English. <br />
             Your journey. <br />
             Your take off.
           </h1>
-            <p className="text-lg md:text-xl text-gray-700 leading-relaxed font-light ">
-              Aprende inglés que realmente usarás. Enfoque personalizado para entrevistas laborales, viajes internacionales y certificaciones oficiales. Resultados visibles desde la primera clase. Agendá tu entrevista <b>gratis.</b>
+            <p className="text-lg md:text-lg text-gray-700 leading-relaxed font-light ">
+            <b>Hacé tuyo el inglés, comunicate sin vueltas.</b> <br/>
+              Te comparto una propuesta diseñada para quienes necesitan herramientas reales: desde preparar una entrevista laboral o un viaje, hasta retomar tus estudios o alcanzar una certificación oficial. Sin escalas y con una hoja de ruta a tu medida, para que el idioma impulse tu propio despegue.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button onClick={handleCalendly} className="bg-[#FF8C00] hover:bg-[#E67E00] text-white px-8 py-6 rounded-full text-md font-semibold shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2 ">
@@ -82,7 +83,7 @@ const Hero = () => {
           duration: 0.6,
           delay: 0.2
         }} className="relative">
-            <img className="w-full h-auto rounded-2xl shadow-2xl" alt="Student taking off - growth and progress in English learning" src="https://images.unsplash.com/photo-1699477755424-18ef42b8dd58" />
+            <img className="w-full h-auto rounded-2xl shadow-2xl" alt="Student taking off - growth and progress in English learning" src="./src/assets/images/hero.png" />
           </motion.div>
         </div>
       </div>

@@ -46,20 +46,20 @@ const Header = () => {
   return (
     <header
       style={{ top: `${getTopPosition()}px` }}
-      className={`fixed left-0 right-0 z-40 transition-all duration-300 ${
+      className={`fixed left-0 right-0 z-40 transition-all duration-300 overflow-hidden ${
         isScrolled ? 'bg-white shadow-md' : 'bg-white/95 backdrop-blur-sm'
       }`}
     >
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-20 overflow-hidden">
           <button
             onClick={() => scrollToSection('hero')}
             className="flex items-center space-x-2 focus:outline-none hover:scale-120"
           >
             <img 
-              src="https://horizons-cdn.hostinger.com/21735f29-05b0-4156-bf8f-f988a9371114/b6ef6a58d02807b42d4a628aaa8e44a8.png" 
+              src="./src/assets/images/logo.png" 
               alt="Take Off English logo" 
-              className="h-32 w-32 mt-4 ml-8" 
+              className="h-20 w-20 ml-8 object-contain" 
             />
           </button>
 

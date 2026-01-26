@@ -7,12 +7,16 @@ const HowItWorks = () => {
     {
       icon: Video,
       title: 'Modalidad',
-      description: 'Clases online por videollamada o híbrido (según disponibilidad)'
+      description: 'Clases online por videollamada'
     },
     {
       icon: Users,
       title: 'Formatos',
-      description: 'Individual (1:1), grupos pequeños (2-4 personas), o intensivos personalizados'
+      description: (
+        <>
+          Individual: profesor + alumno.<br/>(consultar por grupos reducidos)
+        </>
+      )
     },
     {
       icon: Zap,
@@ -32,7 +36,7 @@ const HowItWorks = () => {
     },
     {
       icon: CreditCard,
-      text: 'Pago por clase, paquetes o mensual'
+      text: 'Pago mensual o por paquete'
     }
   ];
 

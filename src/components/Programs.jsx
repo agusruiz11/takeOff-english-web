@@ -124,12 +124,12 @@ const Programs = () => {
                           <div className="space-y-2 text-sm">
                             <div className="flex items-center gap-2 text-gray-700">
                               <BookOpen size={16} className="text-[#FF8C00]" />
-                              <span><strong>{plan.asyncCount}</strong> clases asincrónicas</span>
+                              <span> Encuentros en vivo</span>
                             </div>
                             <div className="flex items-center gap-2 text-gray-700">
                               <Users size={16} className="text-[#FF8C00]" />
-                              <span><strong>{plan.syncCount}</strong> clases sincrónicas</span>
-                              {plan.syncDuration && (
+                              <span> Contenido a tu ritmo</span>
+                              { plan.syncDuration && (
                                 <span className="text-xs text-gray-500">({plan.syncDuration})</span>
                               )}
                             </div>

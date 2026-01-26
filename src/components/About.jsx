@@ -21,9 +21,9 @@ const About = () => {
             className="relative"
           >
             <img 
-              className="w-full h-auto rounded-2xl shadow-2xl" 
+              className="w-full max-w-sm h-auto rounded-2xl shadow-2xl mx-auto"
               alt="English teacher with students in professional setting"
-             src="https://images.unsplash.com/photo-1679316481049-4f6549df499f" />
+              src="./src/assets/images/about-me.png" />
           </motion.div>
 
           <motion.div
@@ -33,31 +33,14 @@ const About = () => {
             viewport={{ once: true }}
             className="space-y-6"
           >
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#00264A]">
+            <h2 className="text-3xl md:text-3xl lg:text-4xl font-bold text-[#00264A]">
               Sobre mí
             </h2>
 
             <p className="text-lg text-gray-700 leading-relaxed font-light">
-              Soy profesora de inglés especializada en adultos con objetivos concretos. Mi misión es ayudarte a sentir que el inglés no es una barrera, sino una herramienta. He trabajado con profesionales preparándose para entrevistas, viajeros que necesitan seguridad básica, y estudiantes que buscan certificaciones oficiales. Cada alumno es único, y eso es lo que hace que este trabajo sea tan gratificante.
+              <b>Acompaño a profesionales a que el inglés deje de ser un pendiente y pase a ser su aliado.</b> <br/><br/> Hola, soy <b>Gaby</b>. Como profesora de Inglés creé <b>Take Off English</b> porque ví a muchos profesionales limitados por no poder expresarse con seguridad en inglés. Mi trabajo es diseñar un esquema de práctica que se adapte a tu día a día y a tus objetivos reales: ya sea liderar una reunión, afrontar una entrevista o viajar sin estrés. <br/> Sé que tu tiempo es valioso, por eso trabajo con objetivos concretos. Tu inglés, tu viaje, tu despegue.
             </p>
 
-            <div className="space-y-4">
-              {highlights.map((highlight, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  viewport={{ once: true }}
-                  className="flex items-start gap-3"
-                >
-                  <div className="flex-shrink-0 mt-1">
-                    <CheckCircle2 className="text-[#FF8C00]" size={24} />
-                  </div>
-                  <p className="text-gray-700">{highlight}</p>
-                </motion.div>
-              ))}
-            </div>
           </motion.div>
         </div>
       </div>

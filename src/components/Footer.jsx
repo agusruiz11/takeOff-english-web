@@ -15,7 +15,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
             <img 
-              src="https://horizons-cdn.hostinger.com/21735f29-05b0-4156-bf8f-f988a9371114/fee223c4526b18e76ea3e58fef436bff.webp" 
+              src="./src/assets/images/logo.png" 
               alt="Take Off English logo" 
               className="h-36 w-36 ml-8" 
             />
@@ -68,22 +68,50 @@ const Footer = () => {
             <span className="font-semibold text-lg mb-4 block">Contacto</span>
             <div className="space-y-3 mb-4">
               <a
-                href="https://wa.me/5491179951001"
+                href="https://wa.me/5491158143809"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-[#FF8C00] transition-colors duration-200 text-sm block"
               >
-                +5491179951001
+                +54 9 11 5814-3809
+              </a>
+              <a
+                href="mailto:info@takeoffenglish.ar"
+                className="text-gray-300 hover:text-[#FF8C00] transition-colors duration-200 text-sm block"
+              >
+                info@takeoffenglish.ar
+              </a>
+              <a
+                href="mailto:gaby@takeoffenglish.ar"
+                className="text-gray-300 hover:text-[#FF8C00] transition-colors duration-200 text-sm block"
+              >
+                gaby@takeoffenglish.ar
+              </a>
+              <a
+                href="mailto:gabyteacher428@gmail.com"
+                className="text-gray-300 hover:text-[#FF8C00] transition-colors duration-200 text-sm block"
+              >
+                gabyteacher428@gmail.com
               </a>
             </div>
             <span className="font-semibold text-lg mb-4 block mt-6">Síguenos</span>
             <div className="flex space-x-4 mb-4">
-              <button className="text-gray-300 hover:text-[#FF8C00] transition-colors duration-200">
+              <a
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-[#FF8C00] transition-colors duration-200"
+              >
                 <Facebook size={24} />
-              </button>
-              <button className="text-gray-300 hover:text-[#FF8C00] transition-colors duration-200">
+              </a>
+              <a
+                href="https://www.instagram.com/_takeoffenglish"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-[#FF8C00] transition-colors duration-200"
+              >
                 <Instagram size={24} />
-              </button>
+              </a>
               <button className="text-gray-300 hover:text-[#FF8C00] transition-colors duration-200">
                 <Linkedin size={24} />
               </button>

@@ -10,16 +10,16 @@ const PlanComparison = ({ plans, programDuration }) => {
   // Generar comparación basada en los features
   const comparisonRows = [
     {
-      label: 'Clases asincrónicas',
-      plan1: plan1.asyncCount,
-      plan2: plan2.asyncCount,
-      type: 'number'
-    },
-    {
-      label: 'Clases sincrónicas',
+      label: 'Encuentros en vivo',
       plan1: plan1.syncCount,
       plan2: plan2.syncCount,
-      type: 'number'
+      type: 'boolean'
+    },
+    {
+      label: 'Contenido a tu ritmo',
+      plan1: plan1.syncCount,
+      plan2: plan2.syncCount,
+      type: 'boolean'
     },
     {
       label: 'Clases 1:1',
