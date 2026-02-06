@@ -18,7 +18,7 @@ const Contact = () => {
   });
 
   const handleWhatsApp = () => {
-    window.open('https://wa.me/5491158143809?text=Hola!%20Quiero%20agendar%20mi%20entrevista%20gratis%20para%20Take%20Off%20English%20😊', '_blank');
+    window.open('https://wa.me/5491179951001?text=Hola!%20Quiero%20agendar%20mi%20entrevista%20gratis%20para%20Take%20Off%20English%20😊', '_blank');
   };
 
   const handleCalendly = () => {
@@ -81,7 +81,7 @@ const Contact = () => {
                 <div className="text-center pb-2">
                   <p className="text-gray-600 text-sm mb-1">Teléfono</p>
                   <a 
-                    href="https://wa.me/5491158143809"
+                    href="https://wa.me/5491179951001"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[#00264A] hover:text-[#FF8C00] font-semibold text-lg transition-colors duration-200"

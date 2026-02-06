@@ -1,5 +1,6 @@
 import React from 'react';
 import { Facebook, Instagram, Linkedin, Mail } from 'lucide-react';
+import logo from '@/assets/images/logo.png';
 
 const Footer = () => {
   const scrollToSection = (id) => {
@@ -15,7 +16,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div>
             <img 
-              src="./src/assets/images/logo.png" 
+              src={logo} 
               alt="Take Off English logo" 
               className="h-36 w-36 ml-8" 
             />
@@ -68,12 +69,12 @@ const Footer = () => {
             <span className="font-semibold text-lg mb-4 block">Contacto</span>
             <div className="space-y-3 mb-4">
               <a
-                href="https://wa.me/5491158143809"
+                href="https://wa.me/5491179951001"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-[#FF8C00] transition-colors duration-200 text-sm block"
               >
-                +54 9 11 5814-3809
+                +54 9 11 7995-1001
               </a>
               <a
                 href="mailto:info@takeoffenglish.ar"
@@ -97,7 +98,7 @@ const Footer = () => {
             <span className="font-semibold text-lg mb-4 block mt-6">Síguenos</span>
             <div className="flex space-x-4 mb-4">
               <a
-                href="#"
+                href="https://www.facebook.com/profile.php?id=61585903962614"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-300 hover:text-[#FF8C00] transition-colors duration-200"
@@ -130,7 +131,7 @@ const Footer = () => {
 
         <div className="border-t border-gray-700 pt-8 text-center">
           <p className="text-gray-400 text-sm">
-            © {new Date().getFullYear()} Take Off English. Todos los derechos reservados.
+            © {new Date().getFullYear()} Take Off English. Todos los derechos reservados. Desarrollado por <a href="https://posicionarte.online" target="_blank" rel="noopener noreferrer" className="text-gray-300 hover:text-[#FF8C00] transition-colors duration-200">Posicionarte Online</a>
           </p>
         </div>
       </div>

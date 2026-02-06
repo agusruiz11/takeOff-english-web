@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { CheckCircle2 } from 'lucide-react';
+import aboutImage from '@/assets/images/about-me.png';
 
 const About = () => {
   const highlights = [
@@ -23,7 +24,7 @@ const About = () => {
             <img 
               className="w-full max-w-sm h-auto rounded-2xl shadow-2xl mx-auto"
               alt="English teacher with students in professional setting"
-              src="./src/assets/images/about-me.png" />
+              src={aboutImage} />
           </motion.div>
 
           <motion.div

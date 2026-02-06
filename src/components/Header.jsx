@@ -3,12 +3,15 @@ import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
+import logo from '@/assets/images/logo.png';
 
-const PROMO_BANNER_HEIGHT = 64; // Altura aproximada del banner en px
+const PROMO_BANNER_HEIGHT_DESKTOP = 48; // h-12 = 48px
+const PROMO_BANNER_HEIGHT_MOBILE = 80; // min-h-[80px] en mobile
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,12 +21,20 @@ const Header = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const mq = window.matchMedia('(max-width: 639px)');
+    const update = () => setIsMobile(mq.matches);
+    update();
+    mq.addEventListener('change', update);
+    return () => mq.removeEventListener('change', update);
+  }, []);
+
+  const promoBannerHeight = isMobile ? PROMO_BANNER_HEIGHT_MOBILE : PROMO_BANNER_HEIGHT_DESKTOP;
+
   // Calcular posición del header: si hay scroll, va a top: 0, si no y el promo está activo, va debajo del promo
   const getTopPosition = () => {
     if (!siteConfig.promoEnabled) return 0;
-    // Si hay scroll, el header sube a top: 0
-    // Si no hay scroll, el header está debajo del promo banner
-    return isScrolled ? 0 : PROMO_BANNER_HEIGHT;
+    return isScrolled ? 0 : promoBannerHeight;
   };
 
   const scrollToSection = (id) => {
@@ -47,7 +58,7 @@ const Header = () => {
     <header
       style={{ top: `${getTopPosition()}px` }}
       className={`fixed left-0 right-0 z-40 transition-all duration-300 overflow-hidden ${
-        isScrolled ? 'bg-white shadow-md' : 'bg-white/95 backdrop-blur-sm'
+        isScrolled ? 'bg-[#00264A] shadow-md' : 'bg-[#00264A] backdrop-blur-sm'
       }`}
     >
       <div className="container mx-auto px-4">
@@ -57,9 +68,9 @@ const Header = () => {
             className="flex items-center space-x-2 focus:outline-none hover:scale-120"
           >
             <img 
-              src="./src/assets/images/logo.png" 
+              src={logo} 
               alt="Take Off English logo" 
-              className="h-20 w-20 ml-8 object-contain" 
+              className="h-16 sm:h-20 w-16 sm:w-20 ml-2 sm:ml-8 object-contain flex-shrink-0" 
             />
           </button>
 
@@ -68,7 +79,7 @@ const Header = () => {
               <button
                 key={item.id}
                 onClick={() => scrollToSection(item.id)}
-                className="text-[#00264A] hover:text-[#FF8C00] transition-colors duration-200 font-medium"
+                className="text-white hover:text-[#FF8C00] transition-colors duration-200 font-medium"
               >
                 {item.label}
               </button>
@@ -85,7 +96,7 @@ const Header = () => {
           </div>
 
           <button
-            className="lg:hidden text-[#00264A] focus:outline-none"
+            className="lg:hidden text-white focus:outline-none mr-4"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
