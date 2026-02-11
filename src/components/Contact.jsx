@@ -86,7 +86,7 @@ const Contact = () => {
                     rel="noopener noreferrer"
                     className="text-[#00264A] hover:text-[#FF8C00] font-semibold text-lg transition-colors duration-200"
                   >
-                    +54 9 11 5814-3809
+                    +54 9 11 7995-1001
                   </a>
                 </div>
 

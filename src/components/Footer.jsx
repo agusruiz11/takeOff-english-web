@@ -88,12 +88,6 @@ const Footer = () => {
               >
                 gaby@takeoffenglish.ar
               </a>
-              <a
-                href="mailto:gabyteacher428@gmail.com"
-                className="text-gray-300 hover:text-[#FF8C00] transition-colors duration-200 text-sm block"
-              >
-                gabyteacher428@gmail.com
-              </a>
             </div>
             <span className="font-semibold text-lg mb-4 block mt-6">Síguenos</span>
             <div className="flex space-x-4 mb-4">
@@ -113,19 +107,21 @@ const Footer = () => {
               >
                 <Instagram size={24} />
               </a>
-              <button className="text-gray-300 hover:text-[#FF8C00] transition-colors duration-200">
-                <Linkedin size={24} />
-              </button>
-              <button className="text-gray-300 hover:text-[#FF8C00] transition-colors duration-200">
+              <a
+                href="mailto:info@takeoffenglish.ar"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-300 hover:text-[#FF8C00] transition-colors duration-200"
+              >
                 <Mail size={24} />
-              </button>
+              </a>
             </div>
-            <a
+            {/* <a
               href="#"
               className="text-gray-400 hover:text-[#FF8C00] transition-colors duration-200 text-sm"
             >
               Campus (próximamente)
-            </a>
+            </a> */}
           </div>
         </div>
 
