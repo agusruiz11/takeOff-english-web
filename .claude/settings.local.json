@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(identify \"/media/elmapache/Western Digital HDD/Mis Archivos/Documentos/1. work/1. Posicionarte/CLIENTES/takeOffEnglish/takeOff-web/src/assets/images/logo.png\")",
+      "Bash(convert \"/media/elmapache/Western Digital HDD/Mis Archivos/Documentos/1. work/1. Posicionarte/CLIENTES/takeOffEnglish/takeOff-web/src/assets/images/logo.png\" -resize 500x500 -gravity center -background white -extent 1200x630 \"/media/elmapache/Western Digital HDD/Mis Archivos/Documentos/1. work/1. Posicionarte/CLIENTES/takeOffEnglish/takeOff-web/public/og-image.png\")",
+      "Bash(python3 -:*)"
+    ]
+  }
+}

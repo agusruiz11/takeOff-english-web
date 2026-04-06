@@ -47,7 +47,7 @@ function App() {
         <meta httpEquiv="content-language" content="es-AR" />
       </Helmet>
       <div className="min-h-screen bg-white">
-        <PromoBanner />
+        {/* <PromoBanner /> */}
         <Header />
         <main>
           <Hero />
