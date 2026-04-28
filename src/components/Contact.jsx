@@ -17,14 +17,6 @@ const Contact = () => {
     message: ''
   });
 
-  const handleWhatsApp = () => {
-    window.open('https://wa.me/5491179951001?text=Hola!%20Quiero%20agendar%20mi%20entrevista%20gratis%20para%20Take%20Off%20English%20😊', '_blank');
-  };
-
-  const handleCalendly = () => {
-    window.open(siteConfig.calendlyUrl, '_blank');
-  };
-
   const handleSubmit = (e) => {
     e.preventDefault();
     toast({
@@ -91,19 +83,23 @@ const Contact = () => {
                 </div>
 
                 <Button
-                  onClick={handleCalendly}
-                  className="bg-[#FF8C00] hover:bg-[#E67E00] text-white px-8 py-6 rounded-full text-lg font-semibold w-full shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2"
+                  asChild
+                  className="cta-calendly bg-[#FF8C00] hover:bg-[#E67E00] text-white px-8 py-6 rounded-full text-lg font-semibold w-full shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2"
                 >
-                  <Calendar size={24} />
-                  Agendar con Calendly
+                  <a href={siteConfig.calendlyUrl} target="_blank" rel="noopener noreferrer">
+                    <Calendar size={24} />
+                    Agendar con Calendly
+                  </a>
                 </Button>
 
                 <Button
-                  onClick={handleWhatsApp}
-                  className="bg-[#00264A] hover:bg-[#003666] text-white px-8 py-6 rounded-full text-lg font-semibold w-full shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2"
+                  asChild
+                  className="cta-whatsapp bg-[#00264A] hover:bg-[#003666] text-white px-8 py-6 rounded-full text-lg font-semibold w-full shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2"
                 >
-                  <MessageCircle size={24} />
-                  Escribir por WhatsApp
+                  <a href="https://wa.me/5491179951001?text=Hola!%20Quiero%20agendar%20mi%20entrevista%20gratis%20para%20Take%20Off%20English%20%F0%9F%98%8A" target="_blank" rel="noopener noreferrer">
+                    <MessageCircle size={24} />
+                    Escribir por WhatsApp
+                  </a>
                 </Button>
               </div>
             </div>

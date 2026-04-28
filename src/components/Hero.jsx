@@ -25,13 +25,6 @@ const Hero = () => {
     return () => mq.removeEventListener('change', update);
   }, []);
 
-  const handleWhatsApp = () => {
-    window.open('https://wa.me/5491179951001?text=Hola!%20Quiero%20agendar%20mi%20entrevista%20gratis%20para%20Take%20Off%20English%20😊', '_blank');
-  };
-  const handleCalendly = () => {
-    window.open(siteConfig.calendlyUrl, '_blank');
-  };
-  
   // Ajustar padding-top dinámicamente:
   // - Si hay scroll: Header 80px (pt-20)
   // - Si no hay scroll y promo activo: mobile 80+80=160 (pt-40), desktop 48+80=128 (pt-32)
@@ -73,13 +66,17 @@ const Hero = () => {
               Te comparto una propuesta diseñada para quienes necesitan herramientas reales: desde preparar una entrevista laboral o un viaje, hasta retomar tus estudios o alcanzar una certificación oficial. Sin escalas y con una hoja de ruta a tu medida, para que el idioma impulse tu propio despegue.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button onClick={handleCalendly} className="bg-[#FF8C00] hover:bg-[#E67E00] text-white px-8 py-6 rounded-full text-md font-semibold shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2 ">
-                <Calendar size={20} />
-                Agendar entrevista
+              <Button asChild className="cta-calendly bg-[#FF8C00] hover:bg-[#E67E00] text-white px-8 py-6 rounded-full text-md font-semibold shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2">
+                <a href={siteConfig.calendlyUrl} target="_blank" rel="noopener noreferrer">
+                  <Calendar size={20} />
+                  Agendar entrevista
+                </a>
               </Button>
-              <Button onClick={handleWhatsApp} variant="outline" className="border-2 border-[#00264A] text-[#00264A] hover:bg-[#00264A] hover:text-white px-8 py-6 rounded-full text-md font-semibold transition-all duration-200 flex items-center justify-center gap-2 ">
-                <MessageCircle size={20} />
-                Hablar por WhatsApp
+              <Button asChild variant="outline" className="cta-whatsapp border-2 border-[#00264A] text-[#00264A] hover:bg-[#00264A] hover:text-white px-8 py-6 rounded-full text-md font-semibold transition-all duration-200 flex items-center justify-center gap-2">
+                <a href="https://wa.me/5491179951001?text=Hola!%20Quiero%20agendar%20mi%20entrevista%20gratis%20para%20Take%20Off%20English%20%F0%9F%98%8A" target="_blank" rel="noopener noreferrer">
+                  <MessageCircle size={20} />
+                  Hablar por WhatsApp
+                </a>
               </Button>
             </div>
           </motion.div>

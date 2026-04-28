@@ -19,15 +19,6 @@ const PromoBanner = ({ onClose }) => {
 
   if (!siteConfig.promoEnabled) return null;
 
-  const handleCalendly = () => {
-    window.open(siteConfig.calendlyUrl, '_blank');
-  };
-
-  const handleWhatsApp = () => {
-    const message = encodeURIComponent(siteConfig.whatsappMessage);
-    window.open(`https://wa.me/${siteConfig.whatsappNumber}?text=${message}`, '_blank');
-  };
-
   return (
     <AnimatePresence>
       {isVisible && (
@@ -54,15 +45,17 @@ const PromoBanner = ({ onClose }) => {
               <span className="sm:hidden">Agendar</span>
             </Button> */}
             <Button
-              onClick={handleWhatsApp}
+              asChild
               size="sm"
               variant="outline"
-              className="h-7 min-h-0 px-2 border-white text-[#FF8C00] hover:bg-[#00264A] hover:text-white hover:border-[#00264A] rounded-full text-xs md:text-sm font-semibold flex items-center gap-1"
+              className="cta-whatsapp h-7 min-h-0 px-2 border-white text-[#FF8C00] hover:bg-[#00264A] hover:text-white hover:border-[#00264A] rounded-full text-xs md:text-sm font-semibold flex items-center gap-1"
               style={{ lineHeight: 1.1 }}
             >
-              <MessageCircle size={12} />
-              <span className="hidden sm:inline">Consultar por WhatsApp</span>
-              <span className="sm:hidden">WhatsApp</span>
+              <a href={`https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(siteConfig.whatsappMessage)}`} target="_blank" rel="noopener noreferrer">
+                <MessageCircle size={12} />
+                <span className="hidden sm:inline">Consultar por WhatsApp</span>
+                <span className="sm:hidden">WhatsApp</span>
+              </a>
             </Button>
             {onClose && (
               <button

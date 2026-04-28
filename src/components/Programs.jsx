@@ -9,15 +9,6 @@ import PlanComparison from './PlanComparison';
 const Programs = () => {
   const [expandedProgram, setExpandedProgram] = useState(null);
 
-  const handleWhatsApp = () => {
-    const message = encodeURIComponent(siteConfig.whatsappMessage);
-    window.open(`https://wa.me/${siteConfig.whatsappNumber}?text=${message}`, '_blank');
-  };
-
-  const handleCalendly = () => {
-    window.open(siteConfig.calendlyUrl, '_blank');
-  };
-
   const toggleProgram = (programId) => {
     setExpandedProgram(expandedProgram === programId ? null : programId);
   };
@@ -167,19 +158,23 @@ const Programs = () => {
                   {/* CTAs */}
                   <div className="flex flex-col sm:flex-row gap-3 mt-6">
                     <Button
-                      onClick={handleCalendly}
-                      className="bg-[#FF8C00] hover:bg-[#E67E00] text-white rounded-full font-semibold flex-1 flex items-center justify-center gap-2"
+                      asChild
+                      className="cta-calendly bg-[#FF8C00] hover:bg-[#E67E00] text-white rounded-full font-semibold flex-1 flex items-center justify-center gap-2"
                     >
-                      <Calendar size={16} />
-                      Agendar entrevista gratis
+                      <a href={siteConfig.calendlyUrl} target="_blank" rel="noopener noreferrer">
+                        <Calendar size={16} />
+                        Agendar entrevista gratis
+                      </a>
                     </Button>
                     <Button
-                      onClick={handleWhatsApp}
+                      asChild
                       variant="outline"
-                      className="border-[#00264A] text-[#00264A] hover:bg-[#00264A] hover:text-white rounded-full font-semibold flex-1 flex items-center justify-center gap-2"
+                      className="cta-whatsapp border-[#00264A] text-[#00264A] hover:bg-[#00264A] hover:text-white rounded-full font-semibold flex-1 flex items-center justify-center gap-2"
                     >
-                      <MessageCircle size={16} />
-                      Hablar por WhatsApp
+                      <a href={`https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(siteConfig.whatsappMessage)}`} target="_blank" rel="noopener noreferrer">
+                        <MessageCircle size={16} />
+                        Hablar por WhatsApp
+                      </a>
                     </Button>
                   </div>
                 </div>
@@ -205,19 +200,23 @@ const Programs = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Button
-                onClick={handleCalendly}
-                className="bg-[#FF8C00] hover:bg-[#E67E00] text-white rounded-full font-semibold px-8 flex items-center justify-center gap-2"
+                asChild
+                className="cta-calendly bg-[#FF8C00] hover:bg-[#E67E00] text-white rounded-full font-semibold px-8 flex items-center justify-center gap-2"
               >
-                <Calendar size={16} />
-                Agendar entrevista gratis
+                <a href={siteConfig.calendlyUrl} target="_blank" rel="noopener noreferrer">
+                  <Calendar size={16} />
+                  Agendar entrevista gratis
+                </a>
               </Button>
               <Button
-                onClick={handleWhatsApp}
+                asChild
                 variant="outline"
-                className="border-[#00264A] text-[#00264A] hover:bg-[#00264A] hover:text-white rounded-full font-semibold px-8 flex items-center justify-center gap-2"
+                className="cta-whatsapp border-[#00264A] text-[#00264A] hover:bg-[#00264A] hover:text-white rounded-full font-semibold px-8 flex items-center justify-center gap-2"
               >
-                <MessageCircle size={16} />
-                Hablar por WhatsApp
+                <a href={`https://wa.me/${siteConfig.whatsappNumber}?text=${encodeURIComponent(siteConfig.whatsappMessage)}`} target="_blank" rel="noopener noreferrer">
+                  <MessageCircle size={16} />
+                  Hablar por WhatsApp
+                </a>
               </Button>
             </div>
           </div>

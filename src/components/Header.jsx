@@ -88,10 +88,12 @@ const Header = () => {
 
           <div className="hidden lg:block">
             <Button
-              onClick={() => window.open(siteConfig.calendlyUrl, '_blank')}
-              className="bg-[#FF8C00] hover:bg-[#E67E00] text-white px-6 py-2 rounded-full font-semibold transition-all duration-200 shadow-md hover:shadow-lg"
+              asChild
+              className="cta-calendly bg-[#FF8C00] hover:bg-[#E67E00] text-white px-6 py-2 rounded-full font-semibold transition-all duration-200 shadow-md hover:shadow-lg"
             >
-              Agendar entrevista gratis
+              <a href={siteConfig.calendlyUrl} target="_blank" rel="noopener noreferrer">
+                Agendar entrevista gratis
+              </a>
             </Button>
           </div>
 
@@ -122,10 +124,12 @@ const Header = () => {
               </button>
             ))}
             <Button
-              onClick={() => window.open(siteConfig.calendlyUrl, '_blank')}
-              className="bg-[#FF8C00] hover:bg-[#E67E00] text-white px-6 py-3 rounded-full font-semibold w-full"
+              asChild
+              className="cta-calendly bg-[#FF8C00] hover:bg-[#E67E00] text-white px-6 py-3 rounded-full font-semibold w-full"
             >
-              Agendar entrevista gratis
+              <a href={siteConfig.calendlyUrl} target="_blank" rel="noopener noreferrer">
+                Agendar entrevista gratis
+              </a>
             </Button>
           </nav>
         </motion.div>
