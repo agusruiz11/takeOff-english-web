@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { siteConfig } from '@/config/site';
+import { openCalendly } from '@/utils/calendly';
 import logo from '@/assets/images/logo.png';
 
 const PROMO_BANNER_HEIGHT_DESKTOP = 48; // h-12 = 48px
@@ -88,12 +89,10 @@ const Header = () => {
 
           <div className="hidden lg:block">
             <Button
-              asChild
+              onClick={openCalendly}
               className="cta-calendly bg-[#FF8C00] hover:bg-[#E67E00] text-white px-6 py-2 rounded-full font-semibold transition-all duration-200 shadow-md hover:shadow-lg"
             >
-              <a href={siteConfig.calendlyUrl} target="_blank" rel="noopener noreferrer">
-                Agendar entrevista gratis
-              </a>
+              Agendar entrevista gratis
             </Button>
           </div>
 
@@ -124,12 +123,10 @@ const Header = () => {
               </button>
             ))}
             <Button
-              asChild
+              onClick={openCalendly}
               className="cta-calendly bg-[#FF8C00] hover:bg-[#E67E00] text-white px-6 py-3 rounded-full font-semibold w-full"
             >
-              <a href={siteConfig.calendlyUrl} target="_blank" rel="noopener noreferrer">
-                Agendar entrevista gratis
-              </a>
+              Agendar entrevista gratis
             </Button>
           </nav>
         </motion.div>

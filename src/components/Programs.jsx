@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Calendar, MessageCircle, ChevronDown, ChevronUp, Clock, BookOpen, Users, AlertCircle } from 'lucide-react';
 import { programs, generalRule } from '@/content/programs';
 import { siteConfig } from '@/config/site';
+import { openCalendly } from '@/utils/calendly';
 import PlanComparison from './PlanComparison';
 
 const Programs = () => {
@@ -158,13 +159,11 @@ const Programs = () => {
                   {/* CTAs */}
                   <div className="flex flex-col sm:flex-row gap-3 mt-6">
                     <Button
-                      asChild
+                      onClick={openCalendly}
                       className="cta-calendly bg-[#FF8C00] hover:bg-[#E67E00] text-white rounded-full font-semibold flex-1 flex items-center justify-center gap-2"
                     >
-                      <a href={siteConfig.calendlyUrl} target="_blank" rel="noopener noreferrer">
-                        <Calendar size={16} />
-                        Agendar entrevista gratis
-                      </a>
+                      <Calendar size={16} />
+                      Agendar entrevista gratis
                     </Button>
                     <Button
                       asChild
@@ -200,13 +199,11 @@ const Programs = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Button
-                asChild
+                onClick={openCalendly}
                 className="cta-calendly bg-[#FF8C00] hover:bg-[#E67E00] text-white rounded-full font-semibold px-8 flex items-center justify-center gap-2"
               >
-                <a href={siteConfig.calendlyUrl} target="_blank" rel="noopener noreferrer">
-                  <Calendar size={16} />
-                  Agendar entrevista gratis
-                </a>
+                <Calendar size={16} />
+                Agendar entrevista gratis
               </Button>
               <Button
                 asChild

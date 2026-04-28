@@ -7,6 +7,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Calendar, MessageCircle, Send } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
 import { siteConfig } from '@/config/site';
+import { openCalendly } from '@/utils/calendly';
 
 const Contact = () => {
   const { toast } = useToast();
@@ -83,13 +84,11 @@ const Contact = () => {
                 </div>
 
                 <Button
-                  asChild
+                  onClick={openCalendly}
                   className="cta-calendly bg-[#FF8C00] hover:bg-[#E67E00] text-white px-8 py-6 rounded-full text-lg font-semibold w-full shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2"
                 >
-                  <a href={siteConfig.calendlyUrl} target="_blank" rel="noopener noreferrer">
-                    <Calendar size={24} />
-                    Agendar con Calendly
-                  </a>
+                  <Calendar size={24} />
+                  Agendar con Calendly
                 </Button>
 
                 <Button

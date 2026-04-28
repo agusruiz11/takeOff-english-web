@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import { MessageCircle, Calendar } from 'lucide-react';
 import { siteConfig } from '@/config/site';
+import { openCalendly } from '@/utils/calendly';
 import heroImage from '@/assets/images/hero.png';
 
 const Hero = () => {
@@ -66,11 +67,9 @@ const Hero = () => {
               Te comparto una propuesta diseñada para quienes necesitan herramientas reales: desde preparar una entrevista laboral o un viaje, hasta retomar tus estudios o alcanzar una certificación oficial. Sin escalas y con una hoja de ruta a tu medida, para que el idioma impulse tu propio despegue.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button asChild className="cta-calendly bg-[#FF8C00] hover:bg-[#E67E00] text-white px-8 py-6 rounded-full text-md font-semibold shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2">
-                <a href={siteConfig.calendlyUrl} target="_blank" rel="noopener noreferrer">
-                  <Calendar size={20} />
-                  Agendar entrevista
-                </a>
+              <Button onClick={openCalendly} className="cta-calendly bg-[#FF8C00] hover:bg-[#E67E00] text-white px-8 py-6 rounded-full text-md font-semibold shadow-lg hover:shadow-xl transition-all duration-200 flex items-center justify-center gap-2">
+                <Calendar size={20} />
+                Agendar entrevista
               </Button>
               <Button asChild variant="outline" className="cta-whatsapp border-2 border-[#00264A] text-[#00264A] hover:bg-[#00264A] hover:text-white px-8 py-6 rounded-full text-md font-semibold transition-all duration-200 flex items-center justify-center gap-2">
                 <a href="https://wa.me/5491179951001?text=Hola!%20Quiero%20agendar%20mi%20entrevista%20gratis%20para%20Take%20Off%20English%20%F0%9F%98%8A" target="_blank" rel="noopener noreferrer">
