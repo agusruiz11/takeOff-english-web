@@ -1,14 +1,25 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
-import { Calendar, MessageCircle, ChevronDown, ChevronUp, Clock, BookOpen, Users, AlertCircle } from 'lucide-react';
+import { Calendar, MessageCircle, ChevronDown, ChevronUp, Clock, BookOpen, Users, AlertCircle, DollarSign, RefreshCw } from 'lucide-react';
 import { programs, generalRule } from '@/content/programs';
 import { siteConfig } from '@/config/site';
 import { openCalendly } from '@/utils/calendly';
 import PlanComparison from './PlanComparison';
+import { useDolarBNA } from '@/hooks/useDolarBNA';
+
+const formatARS = (amount) =>
+  new Intl.NumberFormat('es-AR', { maximumFractionDigits: 0 }).format(amount);
+
+const formatUSD = (amount) =>
+  new Intl.NumberFormat('en-US', { maximumFractionDigits: 0 }).format(amount);
+
+const Orange$ = () => <span className="text-[#FF8C00]">$</span>;
 
 const Programs = () => {
   const [expandedProgram, setExpandedProgram] = useState(null);
+  const [currency, setCurrency] = useState('USD');
+  const { dolar, loading: dolarLoading, error: dolarError } = useDolarBNA();
 
   const toggleProgram = (programId) => {
     setExpandedProgram(expandedProgram === programId ? null : programId);
@@ -42,9 +53,47 @@ const Programs = () => {
           </p>
           
           {/* Regla general */}
-          <div className="bg-white rounded-lg p-4 max-w-3xl mx-auto shadow-sm">
+          <div className="bg-white rounded-lg p-4 max-w-3xl mx-auto shadow-sm mb-6">
             <p className="text-sm text-gray-700 font-medium mb-2">{generalRule.text}</p>
             <p className="text-xs text-gray-600">{generalRule.detail}</p>
+          </div>
+
+          {/* Toggle moneda */}
+          <div className="flex flex-col items-center gap-2">
+            <div className="inline-flex items-center bg-white rounded-full shadow-sm border border-gray-200 p-1">
+              <button
+                onClick={() => setCurrency('USD')}
+                className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
+                  currency === 'USD'
+                    ? 'bg-[#00264A] text-white'
+                    : 'text-gray-500 hover:text-[#00264A]'
+                }`}
+              >
+                USD
+              </button>
+              <button
+                onClick={() => setCurrency('ARS')}
+                className={`px-5 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
+                  currency === 'ARS'
+                    ? 'bg-[#00264A] text-white'
+                    : 'text-gray-500 hover:text-[#00264A]'
+                }`}
+              >
+                ARS
+              </button>
+            </div>
+            {currency === 'ARS' && (
+              <p className="text-xs text-gray-400 flex items-center gap-1">
+                {dolarLoading && <><RefreshCw size={11} className="animate-spin" /> Obteniendo cotización BNA...</>}
+                {dolarError && 'No se pudo obtener la cotización BNA. Mostrando en USD.'}
+                {dolar && !dolarLoading && (
+                  <>
+                    <DollarSign size={11} />
+                    Cotización dólar oficial BNA: {formatARS(dolar.venta)} · Actualización: {new Date(dolar.fechaActualizacion).toLocaleDateString('es-AR')}
+                  </>
+                )}
+              </p>
+            )}
           </div>
         </motion.div>
 
@@ -113,6 +162,31 @@ const Programs = () => {
                           <h4 className="text-xl font-bold text-[#00264A] mb-3">
                             {plan.name}
                           </h4>
+
+                          {/* Precio */}
+                          <div className="mb-4 p-3 bg-[#00264A] rounded-xl text-center">
+                            {plan.priceUSD === 0 ? (
+                              <p className="text-white text-sm font-medium">Precio a confirmar</p>
+                            ) : currency === 'USD' ? (
+                              <p className="text-white text-2xl font-bold">
+                                <Orange$ />{formatUSD(plan.priceUSD)} <span className="text-base font-normal opacity-70">USD</span>
+                              </p>
+                            ) : dolar ? (
+                              <>
+                                <p className="text-white text-2xl font-bold">
+                                  <Orange$ />{formatARS(plan.priceUSD * dolar.venta)} <span className="text-base font-normal opacity-70">ARS</span>
+                                </p>
+                                <p className="text-white/50 text-xs mt-0.5">
+                                  <Orange$ />{formatUSD(plan.priceUSD)} USD
+                                </p>
+                              </>
+                            ) : (
+                              <p className="text-white text-2xl font-bold">
+                                <Orange$ />{formatUSD(plan.priceUSD)} <span className="text-base font-normal opacity-70">USD</span>
+                              </p>
+                            )}
+                          </div>
+
                           <div className="space-y-2 text-sm">
                             <div className="flex items-center gap-2 text-gray-700">
                               <BookOpen size={16} className="text-[#FF8C00]" />

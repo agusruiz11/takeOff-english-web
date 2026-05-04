@@ -9,6 +9,7 @@ export interface Plan {
   syncDuration?: string; // "1 hora reloj" si aplica
   features: PlanFeature[];
   notes?: string[];
+  priceUSD: number; // 0 = pendiente de confirmar
 }
 
 export interface Program {
@@ -30,6 +31,7 @@ export const programs: Program[] = [
         name: 'Ready to fly',
         asyncCount: 10,
         syncCount: 6,
+        priceUSD: 200,
         features: [
           { text: 'Clases 1:1' },
           { text: 'Plan personalizado' },
@@ -42,6 +44,7 @@ export const programs: Program[] = [
         asyncCount: 16,
         syncCount: 8,
         syncDuration: '1 hora reloj',
+        priceUSD: 300,
         features: [
           { text: 'Clases 1:1' },
           { text: 'Contenido a tu ritmo' },
@@ -60,6 +63,7 @@ export const programs: Program[] = [
         name: 'Ready to fly',
         asyncCount: 10,
         syncCount: 6,
+        priceUSD: 200,
         features: [
           { text: 'Clases 1:1' },
           { text: 'Plan personalizado' },
@@ -72,6 +76,7 @@ export const programs: Program[] = [
         asyncCount: 16,
         syncCount: 8,
         syncDuration: '1 hora reloj',
+        priceUSD: 300,
         features: [
           { text: 'Clases 1:1' },
           { text: 'Plan personalizado' },
@@ -92,6 +97,7 @@ export const programs: Program[] = [
         asyncCount: 30,
         syncCount: 18,
         syncDuration: '1 hora reloj',
+        priceUSD: 600,
         features: [
           { text: 'Clases 1:1' },
           { text: 'Plan personalizado' },
@@ -104,6 +110,7 @@ export const programs: Program[] = [
         asyncCount: 48,
         syncCount: 24,
         syncDuration: '1 hora reloj',
+        priceUSD: 750,
         features: [
           { text: 'Clases 1:1' },
           { text: 'Plan personalizado' },
@@ -125,6 +132,7 @@ export const programs: Program[] = [
         asyncCount: 30,
         syncCount: 18,
         syncDuration: '1 hora reloj',
+        priceUSD: 650,
         features: [
           { text: 'Clases 1:1' },
           { text: 'Plan personalizado' },
@@ -133,13 +141,15 @@ export const programs: Program[] = [
           { text: 'Vocabulario clave' },
           { text: 'Mock exams' },
           { text: 'Corrección y retroalimentación de writing' },
-        ]
+        ],
+        notes: ['No incluye valor de inscripción a exámenes. Consultar por inscripción.']
       },
       {
         name: 'Full take off',
         asyncCount: 48,
         syncCount: 24,
         syncDuration: '1 hora reloj',
+        priceUSD: 750,
         features: [
           { text: 'Clases 1:1' },
           { text: 'Plan personalizado' },
@@ -147,7 +157,8 @@ export const programs: Program[] = [
           { text: 'Práctica de speaking' },
           { text: 'Correcciones y feedback' },
           { text: 'Corrección y retroalimentación de writing' },
-        ]
+        ],
+        notes: ['Consultar por pagos mensuales.']
       }
     ]
   }
