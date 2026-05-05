@@ -158,7 +158,6 @@ export const programs: Program[] = [
           { text: 'Correcciones y feedback' },
           { text: 'Corrección y retroalimentación de writing' },
         ],
-        notes: ['Consultar por pagos mensuales.']
       }
     ]
   }
